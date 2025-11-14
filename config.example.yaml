@@ -1,0 +1,55 @@
+version: "1.0"
+rules:
+  # 示例1：监控网页标题
+  - id: example-1
+    name: 监控网页标题
+    description: 监控example.com的标题变化
+    url: https://example.com
+    method: GET
+    interval: 10m
+    extractor_type: css
+    extractor_expr: "title"
+    notify_enabled: true
+    enabled: false
+
+  # 示例2：监控API响应
+  - id: example-2
+    name: 监控API数据
+    description: 监控JSON API的特定字段
+    url: https://api.example.com/data
+    method: GET
+    headers:
+      Authorization: Bearer your-token-here
+      Accept: application/json
+    interval: 5m
+    extractor_type: json
+    extractor_expr: "data.items[0].title"
+    notify_enabled: true
+    enabled: false
+
+  # 示例3：POST请求监控
+  - id: example-3
+    name: POST请求监控
+    description: 发送POST请求并监控响应
+    url: https://api.example.com/search
+    method: POST
+    headers:
+      Content-Type: application/json
+    body: '{"query": "latest", "limit": 10}'
+    interval: 15m
+    extractor_type: json
+    extractor_expr: "results[0].name"
+    notify_enabled: true
+    enabled: false
+
+  # 示例4：使用正则表达式提取
+  - id: example-4
+    name: 正则表达式提取
+    description: 使用正则表达式提取特定内容
+    url: https://example.com/page
+    method: GET
+    interval: 30m
+    extractor_type: regex
+    extractor_expr: 'price:\s*\$(\d+\.\d+)'
+    notify_enabled: true
+    enabled: false

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#4A90E2" stroke="#2E5C8A" stroke-width="8"/>
+  
+  <!-- Monitor/Screen -->
+  <rect x="140" y="160" width="232" height="160" rx="8" fill="#FFFFFF" stroke="#2E5C8A" stroke-width="6"/>
+  <rect x="150" y="170" width="212" height="130" fill="#E8F4FF"/>
+  
+  <!-- URL/Link symbol -->
+  <g transform="translate(256, 235)">
+    <!-- Chain link -->
+    <path d="M -40 -20 L -20 -20 A 20 20 0 0 1 -20 20 L -40 20" 
+          fill="none" stroke="#4A90E2" stroke-width="12" stroke-linecap="round"/>
+    <path d="M 40 -20 L 20 -20 A 20 20 0 0 0 20 20 L 40 20" 
+          fill="none" stroke="#4A90E2" stroke-width="12" stroke-linecap="round"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#4A90E2" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Monitoring waves/signal -->
+  <g transform="translate(256, 380)">
+    <path d="M -60 0 Q -60 -30, -30 -30" fill="none" stroke="#2E5C8A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M -40 0 Q -40 -20, -20 -20" fill="none" stroke="#2E5C8A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="8" fill="#2E5C8A"/>
+    <path d="M 40 0 Q 40 -20, 20 -20" fill="none" stroke="#2E5C8A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 60 0 Q 60 -30, 30 -30" fill="none" stroke="#2E5C8A" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Notification dot -->
+  <circle cx="380" cy="180" r="24" fill="#FF5252" stroke="#FFFFFF" stroke-width="4"/>
+</svg>

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "apiwatch",
+  "outputfilename": "apiwatch",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev": "npm run dev",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "zx06",
+    "email": ""
+  },
+  "info": {
+    "companyName": "",
+    "productName": "API Watch",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright.........",
+    "comments": "URL Content Monitor - 监控URL内容变化"
+  },
+  "wailsjsdir": "./frontend/src/wailsjs",
+  "version": "2",
+  "outputType": "desktop"
+}
