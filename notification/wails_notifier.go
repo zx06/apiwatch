@@ -3,6 +3,7 @@ package notification
 import (
 	"context"
 
+	"github.com/gen2brain/beeep"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
@@ -35,6 +36,9 @@ func (n *WailsNotifier) Notify(title, message string) error {
 		Title:   title,
 		Message: message,
 	})
+
+	// 用beeep发送通知
+	err = beeep.Notify(title, message, "")
 
 	return err
 }
