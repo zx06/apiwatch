@@ -162,7 +162,7 @@ func (t *Task) RunOnce() error {
 	}
 
 	// 更新最后检查时间
-	t.rule.LastChecked = time.Now()
+	t.rule.LastChecked = time.Now().Format(time.RFC3339)
 
 	// 检测内容变化
 	if t.rule.LastContent != "" && t.rule.LastContent != content {

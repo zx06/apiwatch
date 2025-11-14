@@ -95,7 +95,7 @@ type MonitorRule struct {
 	NotifyEnabled bool              `json:"notify_enabled" yaml:"notify_enabled"`
 	Enabled       bool              `json:"enabled" yaml:"enabled"`
 	LastContent   string            `json:"last_content" yaml:"last_content"`
-	LastChecked   time.Time         `json:"last_checked" yaml:"last_checked"`
+	LastChecked   string            `json:"last_checked" yaml:"last_checked"` // RFC3339 格式的时间字符串
 	Status        RuleStatus        `json:"status" yaml:"status"`
 	ErrorMessage  string            `json:"error_message,omitempty" yaml:"error_message,omitempty"`
 }
