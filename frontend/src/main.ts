@@ -1,3 +1,4 @@
+import { mount } from 'svelte'
 import App from './App.svelte'
 import { theme } from './stores/theme'
 
@@ -10,7 +11,8 @@ if (storedTheme) {
   document.documentElement.setAttribute('data-theme', 'light')
 }
 
-const app = new App({
+// @ts-ignore - Svelte 5 component type compatibility issue
+const app = mount(App, {
   target: document.getElementById('app')!,
 })
 

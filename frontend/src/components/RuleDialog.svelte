@@ -50,8 +50,21 @@
   }
 </script>
 
-<div class="dialog-overlay" on:click={() => dispatch('cancel')}>
-  <div class="dialog" on:click|stopPropagation>
+<div 
+  class="dialog-overlay" 
+  role="button" 
+  tabindex="0"
+  on:click={() => dispatch('cancel')}
+  on:keydown={(e) => e.key === 'Escape' && dispatch('cancel')}
+>
+  <div 
+    class="dialog" 
+    role="dialog"
+    aria-modal="true"
+    tabindex="-1"
+    on:click|stopPropagation
+    on:keydown|stopPropagation
+  >
     <div class="dialog-header">
       <h2>{rule?.id ? '编辑规则' : '添加规则'}</h2>
       <button class="btn-close" on:click={() => dispatch('cancel')}>✕</button>
@@ -77,7 +90,7 @@
             bind:value={formData.description}
             rows="2"
             placeholder="规则的详细描述（可选）"
-          />
+          ></textarea>
         </div>
         
         <div class="form-group">
@@ -116,7 +129,7 @@
         </div>
         
         <div class="form-group">
-          <label>自定义请求头</label>
+          <div class="form-label">自定义请求头</div>
           <div class="headers-editor">
             {#if Object.keys(formData.headers).length > 0}
               <div class="headers-list">
@@ -162,7 +175,7 @@
               bind:value={formData.body}
               rows="4"
               placeholder="{`{\"key\": \"value\"}`}"
-            />
+            ></textarea>
           </div>
         {/if}
         
@@ -289,7 +302,8 @@
     gap: 15px;
   }
   
-  label {
+  label,
+  .form-label {
     display: block;
     margin-bottom: 6px;
     font-size: 14px;

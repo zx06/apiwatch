@@ -35,19 +35,19 @@
     <h3>基本信息</h3>
     <div class="info-grid">
       <div class="info-item">
-        <label>描述</label>
+        <div class="info-label">描述</div>
         <span>{rule.description || '无'}</span>
       </div>
       <div class="info-item">
-        <label>URL</label>
+        <div class="info-label">URL</div>
         <span class="url-text">{rule.url}</span>
       </div>
       <div class="info-item">
-        <label>HTTP方法</label>
+        <div class="info-label">HTTP方法</div>
         <span>{rule.method}</span>
       </div>
       <div class="info-item">
-        <label>检查间隔</label>
+        <div class="info-label">检查间隔</div>
         <span>{rule.interval}</span>
       </div>
     </div>
@@ -78,11 +78,11 @@
     <h3>内容提取</h3>
     <div class="info-grid">
       <div class="info-item">
-        <label>提取器类型</label>
+        <div class="info-label">提取器类型</div>
         <span>{getExtractorTypeName(rule.extractor_type)}</span>
       </div>
       <div class="info-item">
-        <label>提取表达式</label>
+        <div class="info-label">提取表达式</div>
         <span class="code-text">{rule.extractor_expr}</span>
       </div>
     </div>
@@ -92,19 +92,19 @@
     <h3>状态信息</h3>
     <div class="info-grid">
       <div class="info-item">
-        <label>当前状态</label>
+        <div class="info-label">当前状态</div>
         <span class="status-badge {rule.status}">{rule.status}</span>
       </div>
       <div class="info-item">
-        <label>最后检查时间</label>
+        <div class="info-label">最后检查时间</div>
         <span>{formatTime(rule.last_checked)}</span>
       </div>
       <div class="info-item">
-        <label>通知</label>
+        <div class="info-label">通知</div>
         <span>{rule.notify_enabled ? '✅ 已启用' : '❌ 已禁用'}</span>
       </div>
       <div class="info-item">
-        <label>规则状态</label>
+        <div class="info-label">规则状态</div>
         <span>{rule.enabled ? '✅ 已启用' : '❌ 已禁用'}</span>
       </div>
     </div>
@@ -191,7 +191,7 @@
     gap: 5px;
   }
   
-  .info-item label {
+  .info-label {
     font-size: 12px;
     color: var(--text-secondary);
     font-weight: 500;

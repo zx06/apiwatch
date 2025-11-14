@@ -5,11 +5,10 @@
   import RuleDetail from './components/RuleDetail.svelte'
   import RuleDialog from './components/RuleDialog.svelte'
   import { rulesStore, selectedRule } from './stores/rules'
-  import { theme } from './stores/theme'
   import type { MonitorRule } from './types/models'
   
-  let showDialog = false
-  let editingRule: MonitorRule | null = null
+  let showDialog = $state(false)
+  let editingRule = $state<MonitorRule | null>(null)
   
   function showAddDialog() {
     editingRule = null
@@ -56,11 +55,8 @@
     rulesStore.setupEventListeners()
   })
   
-  let rules: MonitorRule[] = []
-  let selectedRuleId: string | null = null
-  
-  $: rules = $rulesStore.rules
-  $: selectedRuleId = $rulesStore.selectedRuleId
+  let rules = $derived($rulesStore.rules)
+  let selectedRuleId = $derived($rulesStore.selectedRuleId)
 </script>
 
 <div class="app-container">
